@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      background: url(wan.jpg) no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Sacramento';
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    svg {
+      width: 400px;
+      height: 400px;
+      animation: heartbeat 2s infinite ease-in-out;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      25% { transform: scale(1.05); }
+      50% { transform: scale(0.95); }
+      75% { transform: scale(1.02); }
+    }
+
+    .heart {
+      fill: none;
+      stroke: hotpink;
+      stroke-width: 1.5;
+      opacity: 0.7;
+    }
+
+    .text {
+      font-family: 'arial';
+      font-size: 1em;
+      color: black;
+      margin-top: 20px;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+      text-shadow: 1px 1px 3px rgba(255, 105, 180, 0.4);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .note {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #ff69b4;
+      opacity: 0.6;
+    }
+
+    #dodgeButton {
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: hotpink;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <svg viewBox="-50 -50 100 100">
+      <!-- Banyak garis love -->
+      <path class="heart" d="M 0 -10 C 10 -25, 40 -25, 40 0 C 40 25, 0 45, 0 60 C 0 45, -40 25, -40 0 C -40 -25, -10 -25, 0 -10 Z" transform="scale(0.2)"/>
+      <path class="heart" d="M 0 -10 C 10 -25, 40 -25, 40 0 C 40 25, 0 45, 0 60 C 0 45, -40 25, -40 0 C -40 -25, -10 -25, 0 -10 Z" transform="scale(0.3)"/>
+      <path class="heart" d="M 0 -10 C 10 -25, 40 -25, 40 0 C 40 25, 0 45, 0 60 C 0 45, -40 25, -40 0 C -40 -25, -10 -25, 0 -10 Z" transform="scale(0.4)"/>
+      <path class="heart" d="M 0 -10 C 10 -25, 40 -25, 40 0 C 40 25, 0 45, 0 60 C 0 45, -40 25, -40 0 C -40 -25, -10 -25, 0 -10 Z" transform="scale(0.5)"/>
+      <path class="heart" d="M 0 -10 C 10 -25, 40 -25, 40 0 C 40 25, 0 45, 0 60 C 0 45, -40 25, -40 0 C -40 -25, -10 -25, 0 -10 Z" transform="scale(0.6)"/>
+      <path class="heart" d="M 0 -10 C 10 -25, 40 -25, 40 0 C 40 25, 0 45, 0 60 C 0 45, -40 25, -40 0 C -40 -25, -10 -25, 0 -10 Z" transform="scale(0.7)"/>
+      <path class="heart" d="M 0 -10 C 10 -25, 40 -25, 40 0 C 40 25, 0 45, 0 60 C 0 45, -40 25, -40 0 C -40 -25, -10 -25, 0 -10 Z" transform="scale(0.8)"/>
+      <path class="heart" d="M 0 -10 C 10 -25, 40 -25, 40 0 C 40 25, 0 45, 0 60 C 0 45, -40 25, -40 0 C -40 -25, -10 -25, 0 -10 Z" transform="scale(0.9)"/>
+    </svg>
+
+    <div class="text">
+      "semangat kerjanya yaa, I LOVE YOU MORE SAYANGG muachh hehe 💓"
+    </div>
+  </div>
+
+  <button id="dodgeButton">gak bisa semangat :( </button>
+
+  <script>
+    const button = document.getElementById('dodgeButton');
+
+    button.addEventListener('click', () => {
+      // Dapatkan ukuran jendela
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+
+      // Ukuran acak dalam jangkauan jendela
+      const randomLeft = Math.floor(Math.random() * (windowWidth - 100));
+      const randomTop = Math.floor(Math.random() * (windowHeight - 100));
+
+      // Ubah posisi tombol
+      button.style.left = randomLeft + 'px';
+      button.style.top = randomTop + 'px';
+    });
+  </script>
+
+</body>
+</html>
